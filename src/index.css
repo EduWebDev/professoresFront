@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+
+:root{
+    --color01: indianred;
+}
+
+#root{
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header{
+    background-color: var(--color01);
+    color: #FFF;
+
+    & .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+
+        & nav{
+            display: flex;
+            gap: 10px;
+
+            & a{
+                text-decoration: none;
+                color: #FFF;
+            }
+            & a.active{
+                color: rgb(255, 213, 0);
+            }
+        }
+    }
+}
+main{
+    /* background-color: #EEE; */
+    & .container{
+        min-height: 100%;
+        padding: 20px;
+    }
+}
+footer{
+    background-color: var(--color01);
+
+    & .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 10px;
+
+        & *{
+            width: 100%;
+            text-align: center;
+            color: #FFF;
+        }
+    }
+}
+
+.container{
+    min-width: 300px;
+    max-width: 600px;
+    margin: auto;
+}
+
+main.professores .container{
+    /* BOX FORM */
+    & .formCadastrar{
+        background-color: #EEE;
+        padding: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+        align-items: center;
+        gap: 7px;
+
+        & h3{
+            color: #333;
+        }
+        
+        & input{
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid #888;
+            width: 100%;
+        }
+
+        & button{
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid #888;
+            width: 100%;
+            background-color: indianred;
+            color: #FFF;
+        }
+    }
+
+    /* BOX PROFESSORES */
+    & .professores{
+        background-color: #EEE;
+        border-radius: 15px;
+        padding: 15px;
+
+        & .professor{
+            padding: 7px;
+            display: flex;
+            gap: 5px;
+            border-radius: 5px;
+
+            & a{
+                color: #333;
+                text-decoration: none;
+            }
+
+            & > :first-child{
+                flex: 1;
+                cursor: pointer;
+                font-weight: bold;
+
+                &:hover{
+                    color: indianred;
+                }
+            }
+
+            &:hover{
+                background-color: #DDD;
+            }
+
+            & .icon:hover{
+                color: indianred;
+                cursor: pointer;
+            }
+        }
+    }
+
+    /* BOX DIALOG */
+    & .modal{
+        margin: auto;
+        
+        background-color: #DDD;
+        padding: 20px;
+
+        flex-direction: column;
+        border-radius: 15px;
+        align-items: center;
+        gap: 5px;
+        width: 300px;
+        border: 1px solid #888;
+        box-shadow: 0px 0px 15px #333;
+
+        & .formEditar{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 7px;
+        }
+
+        &[open]{
+            display: flex;
+        }
+
+        &::backdrop{
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        & h3{
+            color: #333;
+        }
+        
+        & input{
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid #888;
+            width: 100%;
+        }
+
+        & button{
+            padding: 7px;
+            border-radius: 7px;
+            border: 1px solid #888;
+            width: 100%;
+            background-color: indianred;
+            color: #FFF;
+        }
+    }
+}
